@@ -9,10 +9,14 @@
   .swiper-slide-next{
     .slider__item-text {
       opacity: 0;
-      animation: textFadeIn 0.5s ease-in-out 0.1s 1 backwards;
+      animation: textFadeIn 0.5s ease-out 0.3s 1 backwards;
       animation-play-state: paused;
     }
   }
+  .swiper-slide-next {
+
+  }
+
   .form__field {
     transform: scaleX(0);
     transform-origin: 100% 50%;
@@ -20,8 +24,7 @@
   }
 
   &.active{
-    .intro__message,
-    .slider__item-text {
+    .intro__message {
       opacity: 1;
       animation-play-state: running;
     }
@@ -35,12 +38,15 @@
 
     @media (min-width: $mobile) {
       .swiper-slide-next {
-        opacity: 1;
-        animation-play-state: running;
+        .slider__item-text{
+          opacity: 1;
+          animation-play-state: running;
+        }
       }
-      .form__field {
-        transform: scaleX(1);
-      }
+    }
+
+    .form__field {
+      transform: scaleX(1);
     }
   }
 }
