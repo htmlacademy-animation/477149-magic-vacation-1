@@ -1,0 +1,52 @@
+.screen {
+  .intro__message{
+    opacity: 0;
+    animation: textFadeIn 0.5s ease-in-out 0.1s 1 backwards;
+    animation-play-state: paused;
+  }
+
+  .swiper-slide-active,
+  .swiper-slide-next{
+    .slider__item-text {
+      opacity: 0;
+      animation: textFadeIn 0.5s ease-out 0.3s 1 backwards;
+      animation-play-state: paused;
+    }
+  }
+  .swiper-slide-next {
+
+  }
+
+  .form__field {
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition: transform 0.5s ease 0.2s;
+  }
+
+  &.active{
+    .intro__message {
+      opacity: 1;
+      animation-play-state: running;
+    }
+
+    .swiper-slide-active {
+      .slider__item-text{
+        opacity: 1;
+        animation-play-state: running;
+      }
+    }
+
+    @media (min-width: $mobile) {
+      .swiper-slide-next {
+        .slider__item-text{
+          opacity: 1;
+          animation-play-state: running;
+        }
+      }
+    }
+
+    .form__field {
+      transform: scaleX(1);
+    }
+  }
+}
