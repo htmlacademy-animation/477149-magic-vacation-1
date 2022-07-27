@@ -131,7 +131,6 @@
 .page-header__nav {
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
