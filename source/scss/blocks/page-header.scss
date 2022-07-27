@@ -97,6 +97,7 @@
     right: 0.8rem;
     height: 1px;
     background-color: $c-dark;
+    transition: all 0.3s ease 0.1s;
   }
 
   &::before {
@@ -114,15 +115,15 @@
     &::before,
     &::after {
       top: 50%;
-      left: 50%;
-      transform: translate(-50%) rotate(45deg);
+      right: 50%;
+      transform: translate(50%) rotate(45deg);
       width: 2.6rem;
       height: 2px;
       box-shadow: none;
     }
 
     &::after {
-      transform: translate(-50%) rotate(-45deg);
+      transform: translate(50%) rotate(-45deg);
     }
   }
 }
@@ -251,7 +252,7 @@
       height: 2px;
       background-color: $c-light;
       right: 0;
-      transition: width 0.3s ease, background-color 0.3s ease;
+      transition: width 0.3s ease, background-color 0.3s ease, transform 0.3s ease-out 0.55s;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         right: 0;
@@ -265,7 +266,6 @@
     }
     &:hover,
     &:focus{
-
       &::after{
         width: 100%;
         left: 0;
