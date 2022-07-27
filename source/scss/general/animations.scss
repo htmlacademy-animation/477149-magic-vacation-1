@@ -1,7 +1,7 @@
 .screen {
   .intro__message{
     opacity: 0;
-    animation: textFadeIn 0.5s ease-in-out 0.1s 1 backwards;
+    animation: textFadeIn 0.5s ease-out 0.5s 1 backwards;
     animation-play-state: paused;
   }
 
@@ -12,9 +12,6 @@
       animation: textFadeIn 0.5s ease-out 0.3s 1 backwards;
       animation-play-state: paused;
     }
-  }
-  .swiper-slide-next {
-
   }
 
   .form__field {
