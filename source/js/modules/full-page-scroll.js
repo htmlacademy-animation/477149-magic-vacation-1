@@ -8,6 +8,7 @@ export default class FullPageScroll {
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.backgroundElement = document.querySelector(`.screen-back`);
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
@@ -52,14 +53,20 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`);
-    });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+    this.backgroundElement.classList.add(`active`);
+
     setTimeout(() => {
-      this.screenElements[this.activeScreen].classList.add(`active`);
-    }, 100);
+      this.backgroundElement.classList.remove(`active`);
+      this.screenElements.forEach((screen) => {
+        screen.classList.add(`screen--hidden`);
+        screen.classList.remove(`active`);
+      });
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+      setTimeout(() => {
+        this.screenElements[this.activeScreen].classList.add(`active`);
+      }, 100);
+    }, 500);
+
   }
 
   changeActiveMenuItem() {
