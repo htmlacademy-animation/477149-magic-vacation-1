@@ -9,7 +9,7 @@
   .swiper-slide-next{
     .slider__item-text {
       opacity: 0;
-      animation: textFadeIn 0.5s ease-out 0.3s 1 backwards;
+      animation: textFadeIn 0.5s ease-in-out 0.5s 1 backwards;
       animation-play-state: paused;
     }
   }
@@ -45,5 +45,63 @@
     .form__field {
       transform: scaleX(1);
     }
+  }
+}
+
+// rules
+.rules__item{
+  &::before{
+    transform: scale(0);
+    animation: rulesIncrementCircle 0.3s $fade-ease 1s 1 backwards;
+
+    .screen.active & {
+      transform: scale(1);
+    }
+  }
+  p {
+    animation: textFadeIn .5s $fade-ease 1s 1 backwards;
+    animation-play-state: paused;
+
+    .screen.active & {
+      animation-play-state: running;
+    }
+  }
+}
+.rules__link.btn {
+  &::before{
+    width: 60px;
+    right: 0;
+    left: unset;
+    transform: translate(0,-50%);
+    opacity: 0;
+    transition: width .4s ease-out 2s, opacity .4s ease 1.8s;
+  }
+  span{
+    opacity: 0;
+    transition: opacity .4s ease 2.35s;
+  }
+  .screen.active & {
+    &::before{
+      width: 100%;
+      right: 0;
+      opacity: 1;
+    }
+    span{
+      opacity: 1;
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  $delay: $i * 0.25s + 0.2s;
+  .rules__item:nth-of-type(#{$i})::before {
+    animation-delay: $delay;
+  }
+}
+
+@for $i from 0 through 10 {
+  $delay: $i * 0.3s + 0.3s;
+  .rules__item:nth-of-type(#{$i}) p {
+    animation-delay: $delay;
   }
 }
