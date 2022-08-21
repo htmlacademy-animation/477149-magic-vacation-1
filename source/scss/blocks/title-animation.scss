@@ -1,0 +1,11 @@
+.title-animation {
+  display: inline-flex;
+  overflow: hidden;
+  line-height: 1.15;
+}
+
+.title-animation span {
+  animation-name: animateTitleText;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(.48,.72,.76,1);
+}

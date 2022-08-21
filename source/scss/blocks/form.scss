@@ -43,6 +43,10 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  animation-name: inputAppearance;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease;
 
   &:focus {
     border: 1px solid $c-purple;
@@ -128,6 +132,11 @@
 .form--result {
   .form__field {
     width: calc(100% - 31rem);
+    animation-name: inputAppearance;
+    animation-duration: 1s;
+    animation-delay: 2.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
 
     @media (min-width: $stop-scaling) {
       width: calc(100% - 310px);
@@ -144,5 +153,20 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: calc(100% - 5rem);
     }
+  }
+  .btn::before {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 1.8s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+  }
+
+  .form__button {
+    animation-name: changeColor;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
   }
 }
