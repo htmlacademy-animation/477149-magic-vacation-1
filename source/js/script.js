@@ -9,6 +9,7 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
+import TextAnimation from './modules/text-animation';
 
 // init modules
 firstLoad();
@@ -21,5 +22,27 @@ result();
 form();
 social();
 
+
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
+
+const animateIntroTitle = new TextAnimation({
+  element: `.intro__title`,
+  multiline: true,
+  delay: 500,
+});
+
+const animateDate = new TextAnimation({
+  element: `.intro__date`,
+  delay: 1000
+});
+
+const animateSliderTitle = new TextAnimation({
+  element: `.slider__item-title`,
+  delay: 500
+});
+
+const animatePrizesTitle = new TextAnimation({
+  element: `.prizes__title`,
+  delay: 500
+});
