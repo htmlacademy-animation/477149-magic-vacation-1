@@ -58,6 +58,7 @@
       transform: scale(1);
     }
   }
+
   p {
     animation: textFadeIn .5s $fade-ease 1s 1 backwards;
     animation-play-state: paused;
@@ -67,6 +68,7 @@
     }
   }
 }
+
 .rules__link.btn {
   &::before{
     width: 60px;
@@ -76,16 +78,19 @@
     opacity: 0;
     transition: width .4s ease-out 2s, opacity .4s ease 1.8s;
   }
+
   span{
     opacity: 0;
     transition: opacity .4s ease 2.35s;
   }
+
   .screen.active & {
     &::before{
       width: 100%;
       right: 0;
       opacity: 1;
     }
+
     span{
       opacity: 1;
     }
@@ -103,5 +108,44 @@
   $delay: $i * 0.3s + 0.3s;
   .rules__item:nth-of-type(#{$i}) p {
     animation-delay: $delay;
+  }
+}
+
+// slider
+.slider__control {
+  transition: transform 1s ease .3s, opacity .5s ease;
+  svg,
+  path{
+    transition: color .3s ease;
+  }
+  &--prev {
+    transform: translateX(-50px) rotate(-90deg);
+    opacity: 0;
+    .screen.active & {
+      transform: translateX(0) rotate(0);
+      opacity: 1;
+      &.swiper-button-disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &--next {
+    transform: translateX(50px) rotate(90deg);
+    opacity: 0;
+    .screen.active & {
+      transform: translateX(0) rotate(0);
+      opacity: 1;
+      &.swiper-button-disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+.slider__pagination {
+  opacity: 0;
+  transition: opacity 1s ease .5s;
+  .screen.active & {
+    opacity: 1;
   }
 }

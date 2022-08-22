@@ -67,6 +67,8 @@ export default class FullPageScroll {
       }, 100);
     }, 500);
 
+    document.body.classList.remove(`blue`, `light-blue`, `purple`);
+    document.body.classList.add(`light-purple`);
   }
 
   changeActiveMenuItem() {
