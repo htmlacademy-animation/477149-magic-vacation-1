@@ -1,0 +1,28 @@
+$c-light: #ffffff;
+$c-dark: #5f458c;
+$c-purple: #a67ee5;
+
+:root {
+  --mainColor: #5f458c;
+  --additionalColor: #a67ee5;
+}
+
+.purple {
+  --mainColor: #5f458c;
+  --additionalColor: #a67ee5;
+}
+
+.light-purple {
+  --mainColor: #a67ee5;
+  --additionalColor: #5f458c;
+}
+
+.blue {
+  --mainColor: #9FCEFF;
+  --additionalColor: #3F72EE;
+}
+
+.light-blue {
+  --mainColor: #3F72EE;
+  --additionalColor: #90B8E1;
+}

@@ -24,7 +24,7 @@
   display: block;
   width: 4rem;
   height: 4rem;
-  color: $c-dark;
+  color: var(--additionalColor);
   border-radius: 50%;
   transition: background-color 0.3s ease;
 
@@ -47,9 +47,10 @@
     height: 100%;
     border-radius: 50%;
     background-color: $c-light;
-    //border: 2px solid $c-light;
+    border: 2px solid $c-light;
     z-index: -1;
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    outline: none;
   }
 
   svg {
@@ -62,33 +63,33 @@
 
   &:hover{
     &::before{
-      background-color: $c-purple;
+      background-color: $c-light;
     }
+
     svg{
-      color: #ffffff;
+      color: var(--mainColor);
     }
   }
 
   &:hover,
   .social-block--active &,
   .screen{
-    color: $c-purple;
+    color: var(--additionalColor);
     opacity: 1;
     pointer-events: auto;
 
     &::before {
-      //width: 112.5%;
-      //height: 112.5%;
       transform: translate(-50%,-50%) scale(1.125);
     }
   }
 
   &:focus {
-    color: $c-purple;
+    color: var(--mainColor);
     outline: none;
 
     &::before {
-      border-color: $c-purple;
+      transform: translate(-50%,-50%) scale(1.125);
+      border-color: var(--mainColor);
     }
 
     & + .social-block__list {
@@ -99,13 +100,14 @@
 
   &:active,
   &:active:focus {
-    color: $c-light;
-
     &::before {
-      width: 100%;
-      height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      transform: translate(-50%,-50%) scale(1.125);
+      background-color: var(--mainColor);
+      border-color: var(--mainColor);
+    }
+
+    svg{
+      color: $c-light;
     }
   }
 }
@@ -157,10 +159,10 @@
     }
   }
 
-  //&:focus-within {
-  //  opacity: 1;
-  //  pointer-events: auto;
-  //}
+  &:focus-within {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   .social-block--active & {
     opacity: 1;
@@ -226,19 +228,19 @@
   }
 
   &:hover {
-    color: $c-purple;
+    color: var(--mainColor);
   }
 
   &:focus {
-    color: $c-purple;
+    color: var(--mainColor);
     background-color: $c-light;
-    border-color: $c-purple;
+    border-color: var(--mainColor);
     outline: none;
   }
 
   &:active,
   &:active:focus {
-    color: $c-purple;
+    color: var(--mainColor);
     background-color: $c-light;
     border-color: $c-light;
   }
