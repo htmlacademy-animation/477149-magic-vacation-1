@@ -20,6 +20,7 @@ module.exports = {
   mode: 'development',
   devtool: `source-map`,
   devServer: {
+    host: process.platform === 'win32' ? 'local-ip' : '0.0.0.0',
     contentBase: path.join(__dirname, 'build'),
     port: 7777
   },
