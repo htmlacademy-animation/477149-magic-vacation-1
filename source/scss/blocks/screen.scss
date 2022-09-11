@@ -339,6 +339,7 @@
 
 .screen--result {
   position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -346,11 +347,94 @@
   opacity: 0;
   pointer-events: none;
 
-  &.screen--show {
+  &.active {
     opacity: 1;
     pointer-events: auto;
+
+    .result__title {
+      svg{
+        path{
+          stroke-dashoffset: 0;
+        }
+      }
+      svg#victory{
+        transform: scale(1);
+      }
+      svg#defeat{
+        .wrap{
+          transform: translateY(0);
+        }
+      }
+    }
+
+    .result__text {
+      opacity: 1;
+    }
+
+    .result__image {
+      opacity: 1;
+    }
+
+    .form__label {
+      opacity: 1;
+    }
+  }
+
+  .result__title {
+    svg {
+      transition: transform 1s ease 0.5s;
+      path {
+        stroke-dasharray: 560;
+        stroke-dashoffset: 560;
+        transition: 0.8s ease 0.2s;
+      }
+    }
+
+    svg#victory {
+      transform: scale(1.1);
+    }
+
+    svg#defeat{
+      overflow: visible;
+      .wrap{
+        transform: translateY(-80px);
+        transition: transform 0.3s $bounce 0s;
+      }
+    }
+  }
+
+  .result__text {
+    opacity: 0;
+    transition: opacity 1s ease 1.5s;
+  }
+
+  .result__image {
+    opacity: 0;
+    transition: opacity 1s ease 0.75s;
+  }
+
+  .form__label {
+    opacity: 0;
+    transition: opacity 1s ease 3s;
   }
 }
+
+@for $i from 0 through 10 {
+  $delay: $i * 0.05s + 0.6s;
+  .screen--result.active {
+    .result__title {
+      svg#defeat{
+        .wrap:nth-of-type(#{$i}){
+          transition-delay: $delay;
+        }
+      }
+    }
+  }
+  .rules__item:nth-of-type(#{$i})::before {
+    animation-delay: $delay;
+  }
+}
+
 
 .screen--rules {
   background-color: $c-dark;
