@@ -385,6 +385,8 @@
     margin-top: 9.5rem;
     width: 66.5rem;
     height: 11.3rem;
+    position: relative;
+    z-index: 1;
 
     @media (min-width: $stop-scaling) {
       margin-top: 95px;

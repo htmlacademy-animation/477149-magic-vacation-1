@@ -6,7 +6,8 @@ export default class FullPageScroll {
     this.scrollFlag = true;
     this.timeout = null;
 
-    this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
+    // this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
+    this.screenElements = document.querySelectorAll(`.screen`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
     this.backgroundElement = document.querySelector(`.screen-back`);
 
