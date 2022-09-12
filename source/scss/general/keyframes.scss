@@ -157,3 +157,18 @@
     stroke-dashoffset: 0;
   }
 }
+
+@keyframes letterBounce {
+  0% {
+    transform: translateY(-80px);
+  }
+  75% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -227,6 +227,7 @@
 }
 
 .result__button {
+  position: relative;
   @include btn-reset;
   display: flex;
   align-items: center;

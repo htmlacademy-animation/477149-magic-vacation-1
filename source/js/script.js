@@ -22,16 +22,6 @@ result();
 form();
 social();
 
-// const victory = document.querySelector(`#victory`);
-// const defeat = document.querySelector(`#defeat`);
-// const paths = defeat.querySelectorAll(`path`);
-//
-// paths.forEach((element, index) => {
-//   const pathLength = element.getTotalLength();
-//   console.log(element, index, pathLength);
-// });
-
-
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
