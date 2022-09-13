@@ -1,7 +1,10 @@
 @keyframes textFadeIn {
   0%{
-    transform: translateX(10px);
+    transform: translateX(16px);
     opacity: 0;
+  }
+  90%{
+    opacity: 1;
   }
   100%{
     transform: translateX(0);

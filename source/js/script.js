@@ -28,7 +28,7 @@ fullPageScroll.init();
 const animateIntroTitle = new TextAnimation({
   element: `.intro__title`,
   multiline: true,
-  delay: 500,
+  delay: 100
 });
 
 const animateDate = new TextAnimation({
@@ -38,10 +38,10 @@ const animateDate = new TextAnimation({
 
 const animateSliderTitle = new TextAnimation({
   element: `.slider__item-title`,
-  delay: 500
+  delay: 100
 });
 
 const animatePrizesTitle = new TextAnimation({
   element: `.prizes__title`,
-  delay: 500
+  delay: 100
 });

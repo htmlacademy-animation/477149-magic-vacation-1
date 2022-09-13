@@ -11,5 +11,9 @@ export default () => {
       socialBlock.classList.remove(`loaded`);
       // header.classList.remove(`loaded`);
     }, 500);
+
+    document.querySelectorAll('.number-animation').forEach((el, index) => {
+      console.log(el);
+    });
   });
 };
