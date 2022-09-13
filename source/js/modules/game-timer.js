@@ -15,7 +15,7 @@ export default class GameTimer {
 
   destroy() {
     cancelAnimationFrame(this.currentRequest);
-    this.draw(MAX_TIMER);
+    this.draw(MAX_TIMER * 1000);
   }
 
   run() {

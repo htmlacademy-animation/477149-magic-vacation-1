@@ -1,5 +1,6 @@
 import throttle from 'lodash/throttle';
 import GameTimer from "./game-timer";
+import { prizesAnimation } from './prizes-animation';
 
 export default class FullPageScroll {
   constructor() {
@@ -77,6 +78,13 @@ export default class FullPageScroll {
       this.timer.init();
     } else {
       this.timer.destroy();
+    }
+
+
+    if (this.screenElements[this.activeScreen].id === `prizes`) {
+      prizesAnimation.init();
+    } else {
+      prizesAnimation.destroy();
     }
   }
 
