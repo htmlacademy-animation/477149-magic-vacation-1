@@ -1,5 +1,4 @@
 import {NumbersAnimation} from "./numbers-animation";
-const TIME_BETWEEN_ONE_AND_TWO = 500;
 
 class PrizesAnimation {
   constructor() {
@@ -10,14 +9,9 @@ class PrizesAnimation {
     this.firstNum = this.firstItem.querySelector(`.real`);
     this.secondNum = this.secondItem.querySelector(`.real`);
     this.thirdNum = this.thirdItem.querySelector(`.real`);
-
-    console.log(this.firstItem, this.secondItem, this.thirdItem);
-    console.log(this.firstNum, this.secondNum, this.thirdNum);
   }
 
   init() {
-    // this.thirdNum.textContent = 11;
-
     setTimeout(() => {
       this.firstItem.classList.add(`active`);
     }, 1000);
@@ -27,7 +21,7 @@ class PrizesAnimation {
 
       setTimeout(() => {
         new NumbersAnimation(this.secondNum, 1, 7);
-      }, 1400);
+      }, 1500);
     }, 1500);
 
     setTimeout(() => {

@@ -2,8 +2,10 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 15rem 5.7rem 6rem;
   width: 100%;
+  position: relative;
 
   @media (min-width: $stop-scaling) {
     padding: 150px 57px 60px;
@@ -38,9 +40,17 @@
 
 .result__image{
   position: absolute;
+  top: 0;
   height: auto;
   animation-duration: 1s;
   animation-fill-mode: backwards;
+  margin: 0 auto;
+  display: block;
+
+  @media (max-width: $tablet) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   img {
     display: block;
@@ -352,6 +362,7 @@
 
 .result__form {
   margin-top: auto;
+  width: 100%;
 }
 
 .result--trip,

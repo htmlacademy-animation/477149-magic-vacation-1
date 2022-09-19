@@ -34,10 +34,5 @@ export class NumbersAnimation {
 
     this.prevTick = now;
     this.el.textContent = newValue;
-
-    console.log(newValue, now, this.el);
-    // console.log(this.prevTick);
   }
-
-
 }
