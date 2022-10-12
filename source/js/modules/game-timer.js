@@ -3,7 +3,7 @@ const FPS_INTERVAL = 1000;
 
 export default class GameTimer {
   constructor(element) {
-    this.element = document.querySelector(element);
+    this.element = element;
     this.minutesEl = this.element.querySelector(`span:nth-of-type(1)`);
     this.secondsEl = this.element.querySelector(`span:nth-of-type(2)`);
     this.currentRequest = null;
@@ -54,5 +54,5 @@ export default class GameTimer {
     this.minutesEl.textContent = minutes < 10 ? `0${minutes}` : minutes;
     this.secondsEl.textContent = seconds < 10 ? `0${seconds}` : seconds;
   }
-
 }
+

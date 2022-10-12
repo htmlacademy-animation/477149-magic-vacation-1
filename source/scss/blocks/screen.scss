@@ -353,7 +353,7 @@
       path {
         stroke-dasharray: 560;
         stroke-dashoffset: 560;
-        transition: 0.75s ease 0s;
+        transition: 0.75s ease 2s;
       }
     }
 
@@ -385,7 +385,7 @@
   }
 
 
-  &.active {
+  &.screen--show {
     opacity: 1;
     pointer-events: auto;
 

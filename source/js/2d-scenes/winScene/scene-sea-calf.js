@@ -1,6 +1,6 @@
-import Animation from './animation.js';
-import Scene2D from './scene-2d.js';
-import easing from './utils.js';
+import Animation from '../animation/animation.js';
+import Scene2D from '../animation/scene-2d.js';
+import easing from '../animation/utils.js';
 
 const IMAGES_URLS = Object.freeze({
   plane: `./img/module-4/win-primary-images/airplane.png`,
@@ -98,7 +98,7 @@ const LOCALS = Object.freeze({
   }
 });
 
-export default class SeaCalf extends Scene2D {
+export default class SceneSeaCalf extends Scene2D {
   constructor() {
     const canvas = document.getElementById(`sea-calf-scene`);
 
@@ -114,9 +114,7 @@ export default class SeaCalf extends Scene2D {
     this.afterInit = () => {
       this.objects.plane.before = this.drawBlob.bind(this);
     };
-  }
 
-  init() {
     this.initEventListeners();
     this.initObjects(OBJECTS);
     this.initLocals();
@@ -145,9 +143,7 @@ export default class SeaCalf extends Scene2D {
 
   initAnimations() {
     this.animations.push(new Animation({
-      func: () => {
-        this.drawScene();
-      },
+      func: () => this.drawScene(),
       duration: `infinite`,
       fps: 60
     }));
