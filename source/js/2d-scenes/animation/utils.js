@@ -61,6 +61,10 @@ function easeOutElastic(x) {
   }
 }
 
+export function easeInOutSinus(x) {
+  return -(Math.cos(Math.PI * x) - 1) / 2;
+}
+
 
 const easing = Object.freeze({
   easeLinear,
@@ -70,7 +74,8 @@ const easing = Object.freeze({
   easeInExpo,
   easeOutExpo,
   easeInElastic,
-  easeOutElastic
+  easeOutElastic,
+  easeInOutSinus
 });
 
 
